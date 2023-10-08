@@ -40,5 +40,5 @@ jobs:
             docker stop ${{ secrets.CNAME }}
             docker rm ${{ secrets.CNAME }}
             docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/imgkmb
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/km5-images
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/imgkmb
             docker run --name ${{ secrets.CNAME }} -p 8000:8000 -d -e DB_HOST=${{secrets.DB_HOST}} -e DB_PORT=3306 -e DB_USERNAME=${{secrets.DB_USERNAME}} -e DB_NAME=${{secrets.DB_NAME}} -e DB_PASSWORD=${{secrets.DB_PASSWORD}} -e JWT_SECRET_KEY=${{secrets.JWT_SECRET_KEY}} ${{ secrets.DOCKERHUB_USERNAME }}/imgkmb
